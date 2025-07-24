@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* --- Hero Slider --- */
+.main-content {
+    padding-top: 0; /* Adjust if you have a fixed header */
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 80px; /* Augmentation de l'espace à 80px sur les côtés */
+    box-sizing: border-box; /* S'assure que le padding est inclus dans la taille totale */
+    margin-top: 4rem; /* Ajoute un espace en haut */
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 0 2rem;
+}
+
+.slider-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.slider-controls button:hover {
+    opacity: 0.7;
+}
+
+.slider-pagination {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-dot.active {
+    background-color: white;
+}
+
+/* Styles du footer uniquement */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+footer {
+  background: #fff;
+  margin-top: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+/* Ligne 1 : Newsletter & Réseaux */
+.footer-action-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.footer-newsletter {
+  flex-grow: 1; /* Permet à la section de prendre l'espace disponible */
+  display: flex;
+  justify-content: center; /* Centre le contenu (icône + bouton) */
+  align-items: center;
+  gap: 1rem;
+  /* On ajoute une marge à droite pour ne pas coller les icônes sociales sur petit écran */
+  margin-right: 2rem; 
+}
+
+.btn-icon-newsletter {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-icon-newsletter:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-newsletter {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-newsletter:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.footer-social a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem; /* Increased font size for icons */
+  margin-left: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Ligne 2 : 2 colonnes */
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.footer-logo-area {
+  background: #000;
+  /* Ancien design : fond noir avec découpe diagonale large */
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  color: #fff;
+  padding: 2rem;
+}
+.footer-logo-area .footer-logo {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer-logo-area address {
+  font-style: normal;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.footer-links {
+  background: none;
+}
+.footer-links-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column a {
+  display: inline-block; /* Pour que la ligne s'adapte à la largeur du texte */
+  position: relative;
+  margin: 0.25rem 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 4px; /* Ajoute un petit espace pour la ligne */
+}
+
+.footer-column a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+.footer-column a:hover::after {
+  width: 100%;
+}
+
+/* Séparateur incliné entre colonnes */
+.footer-column + .footer-column {
+  position: relative;
+  padding-left: 2rem;
+}
+.footer-column + .footer-column::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #eee;
+  transform: rotate(15deg);
+  transform-origin: top left;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
+/* --- Projects Section --- */
+.projects {
+    padding: 6rem 80px;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.section-header .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.project-card:nth-child(even) {
+    flex-direction: column-reverse;
+}
+
+.project-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 3rem;
+    text-align: center;
+}
+
+.project-location {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn-project {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.btn-project::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.btn-project:hover::after {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* --- Blog Section --- */
+.blog-section {
+    padding: 6rem 80px;
+    background-color: #fafafa;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: #fff;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.blog-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-info {
+    padding: 2rem;
+}
+
+.blog-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.blog-info h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.btn-read {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    transition: border-color 0.3s ease;
+}
+
+.btn-read:hover {
+    border-color: #333;
+}
+
+/* --- Single Testimonial Block --- */
+.single-testimonial {
+    max-width: 700px;
+    margin: 5rem auto; /* Adds space above and below */
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-left: 4px solid #c5a487; /* Accent color from the original design */
+}
+
+.single-testimonial .testimonial-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.single-testimonial .testimonial-author {
+    font-style: normal;
+    font-weight: 500;
+    color: #555;
+}
+
+/* --- Responsive Footer --- */
+
+@media (max-width: 992px) {
+  .footer-bottom {
+    grid-template-columns: 1fr; /* Logo and links stack */
+    gap: 3rem;
+  }
+
+  .footer-logo-area {
+    clip-path: none; /* Optional: simplify shape on tablets */
+    text-align: center;
+  }
+
+  .footer-links-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for links */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-action-area {
+    flex-direction: column; /* Stack newsletter and social icons */
+    gap: 2rem;
+  }
+
+  .footer-newsletter {
+    margin-right: 0; /* Remove margin on mobile */
+  }
+
+  .footer-links-container {
+    grid-template-columns: 1fr; /* 1 column for links */
+    text-align: center;
+  }
+
+  .footer-column a {
+    display: inline-block; /* Center the links properly */
+  }
+
+  .footer-column + .footer-column {
+    padding-left: 0; /* Remove padding */
+  }
+
+  .footer-column + .footer-column::before {
+    display: none; /* Hide the slanted separator */
+  }
+}
+
+@media (max-width: 992px) {
+    .projects {
+        padding: 4rem 40px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
