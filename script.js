@@ -122,16 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Mobile Menu Toggle (from original code) ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    if(menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('open');
-            nav.classList.toggle('nav-active');
-        });
-    }
+    // --- Mobile Menu Toggle removed: menu now always visible ---
     
     // --- Loader (from original code) ---
     const loader = document.querySelector('.loader');
