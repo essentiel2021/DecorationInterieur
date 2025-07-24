@@ -122,7 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Mobile Menu Toggle removed: menu now always visible ---
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    if(menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+    }
     
     // --- Loader (from original code) ---
     const loader = document.querySelector('.loader');
