@@ -722,6 +722,21 @@ footer {
     .testimonials {
         padding: 4rem 20px;
     }
+
+    /* Display each project card as a horizontal row on small screens */
+    .project-card,
+    .project-card:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .project-image,
+    .project-info {
+        width: 50%;
+    }
+
+    .project-image img {
+        height: 180px;
+    }
 }
 
 @media (max-width: 992px) {
