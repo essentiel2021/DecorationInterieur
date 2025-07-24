@@ -495,6 +495,49 @@ footer {
     color: #555;
 }
 
+/* --- Testimonial Carousel --- */
+.testimonials {
+    padding: 6rem 80px;
+    background-color: #fafafa;
+}
+
+.testimonial-carousel {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    border-left: 4px solid #c5a487;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    text-align: center;
+}
+
+.testimonial-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+.testimonial-item .testimonial-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-item .testimonial-author {
+    font-weight: 500;
+    color: #555;
+}
+
 /* --- Responsive Footer --- */
 
 @media (max-width: 992px) {
