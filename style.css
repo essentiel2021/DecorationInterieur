@@ -21,16 +21,9 @@
     text-decoration: none;
     color: #333;
 }
+/* Hide mobile toggle for now */
 .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+    display: none;
 }
 .menu-toggle span {
     display: block;
@@ -49,42 +42,39 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255,255,255,0.97);
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 999;
-}
-.nav.nav-active {
-    transform: translateY(0);
-    opacity: 1;
+    padding: 0 2rem;
 }
 .nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 2rem;
     margin: 0;
-    text-align: center;
+    padding: 0;
 }
 .nav li {
-    margin: 1rem 0;
+    margin: 0;
 }
 .nav a {
-    font-size: 1.5rem;
+    position: relative;
+    font-size: 1rem;
     color: #333;
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 0.5rem 0;
 }
-.nav a:hover {
-    color: #000;
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #333;
+    transition: width 0.3s;
+}
+.nav a:hover::after {
+    width: 100%;
 }
 
 /* --- Hero Slider --- */
