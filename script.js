@@ -67,6 +67,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Testimonial Carousel ---
+    const testimonialCarousel = document.querySelector('.testimonial-carousel');
+    if (testimonialCarousel) {
+        const testimonials = testimonialCarousel.querySelectorAll('.testimonial-item');
+        let currentTestimonial = 0;
+        let testimonialInterval;
+
+        function showTestimonial(index) {
+            testimonials[currentTestimonial].classList.remove('active');
+            currentTestimonial = (index + testimonials.length) % testimonials.length;
+            testimonials[currentTestimonial].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            showTestimonial(currentTestimonial + 1);
+        }
+
+        testimonialInterval = setInterval(nextTestimonial, 3000);
+
+        testimonialCarousel.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+        testimonialCarousel.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(nextTestimonial, 3000);
+        });
+    }
+
     // --- Scroll Reveal Animation for Cards ---
     const cards = document.querySelectorAll('.project-card, .blog-card, .single-testimonial');
     if (cards.length > 0) {
